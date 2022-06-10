@@ -26,60 +26,60 @@ const MainTab = () => {
     const user = auth.currentUser;
     return (
         <Stack.Navigator>
-            {!user ? <>
-                <Stack.Screen
-                    name="Login"
-                    component={Login}
-                    options={{ headerShown: false }}
-                />
-            </> : <>
-                <Stack.Screen
-                    name="Home"
-                    component={Home}
-                    options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                    name="Cart"
-                    component={Cart}
-                    options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                    name="SingleCategory"
-                    component={SingleCategory}
-                    options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                    name="CategorySingle"
-                    component={CategorySingle}
-                    options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                    name="Pino"
-                    component={Pino}
-                    options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                    name="Details"
-                    component={Details}
-                // options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                    name="Checkout"
-                    component={Checkout}
-                // options={{ headerShown: false }}
-                />
 
-                <Stack.Screen
-                    name="LogOut"
-                    component={LogOut}
-                    options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                    name="Orders"
-                    component={Orders}
-                    options={{ headerShown: false }}
-                />
-            </>}
+            <Stack.Screen
+                name="Login"
+                component={Login}
+                options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+                name="Home"
+                component={Home}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="Cart"
+                component={Cart}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="SingleCategory"
+                component={SingleCategory}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="CategorySingle"
+                component={CategorySingle}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="Pino"
+                component={Pino}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="Details"
+                component={Details}
+            // options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="Checkout"
+                component={Checkout}
+            // options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+                name="LogOut"
+                component={LogOut}
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name="Orders"
+                component={Orders}
+                options={{ headerShown: false }}
+            />
+
 
 
 
