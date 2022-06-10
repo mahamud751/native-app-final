@@ -17,62 +17,71 @@ import CategorySingle from '../screens/CategorySingle'
 import Checkout from '../screens/Checkout'
 import Orders from '../screens/Orders'
 import Pino from '../screens/PIno'
+import { getAuth } from 'firebase/auth'
 
 
 const Stack = createNativeStackNavigator();
 const MainTab = () => {
+    const auth = getAuth();
+    const user = auth.currentUser;
     return (
         <Stack.Navigator>
-            <Stack.Screen
-                name="Home"
-                component={Home}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen
-                name="Cart"
-                component={Cart}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen
-                name="SingleCategory"
-                component={SingleCategory}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen
-                name="CategorySingle"
-                component={CategorySingle}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen
-                name="Pino"
-                component={Pino}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen
-                name="Details"
-                component={Details}
-            // options={{ headerShown: false }}
-            />
-            <Stack.Screen
-                name="Checkout"
-                component={Checkout}
-            // options={{ headerShown: false }}
-            />
-            <Stack.Screen
-                name="Login"
-                component={Login}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen
-                name="LogOut"
-                component={LogOut}
-                options={{ headerShown: false }}
-            />
-            <Stack.Screen
-                name="Orders"
-                component={Orders}
-                options={{ headerShown: false }}
-            />
+            {!user ? <>
+                <Stack.Screen
+                    name="Login"
+                    component={Login}
+                    options={{ headerShown: false }}
+                />
+            </> : <>
+                <Stack.Screen
+                    name="Home"
+                    component={Home}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Cart"
+                    component={Cart}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="SingleCategory"
+                    component={SingleCategory}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="CategorySingle"
+                    component={CategorySingle}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Pino"
+                    component={Pino}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Details"
+                    component={Details}
+                // options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Checkout"
+                    component={Checkout}
+                // options={{ headerShown: false }}
+                />
+
+                <Stack.Screen
+                    name="LogOut"
+                    component={LogOut}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Orders"
+                    component={Orders}
+                    options={{ headerShown: false }}
+                />
+            </>}
+
+
 
         </Stack.Navigator>
     )
@@ -80,7 +89,8 @@ const MainTab = () => {
 
 export default function DrawerNav() {
     const Drawer = createDrawerNavigator();
-
+    const auth = getAuth();
+    const user = auth.currentUser;
     return (
 
         <Drawer.Navigator drawerContent={props => <CustomDrawer{...props} />} screenOptions={{

@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View, FlatList } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { DataTable } from 'react-native-paper';
+import { getAuth } from 'firebase/auth';
 const optionsPerPage = [2, 3, 4];
 export default function Orders() {
-
+    const auth = getAuth();
+    const user = auth.currentUser
 
 
     const [page, setPage] = React.useState(0);
@@ -11,12 +13,12 @@ export default function Orders() {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch('https://guarded-garden-69209.herokuapp.com/booking')
+        fetch(`https://guarded-garden-69209.herokuapp.com/myBooking/?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data)
             })
-    }, [])
+    }, [user.email])
     console.log(orders)
 
     React.useEffect(() => {
