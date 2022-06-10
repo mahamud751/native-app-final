@@ -30,7 +30,7 @@ export default function Login() {
     createUserWithEmailAndPassword(authentication, email, password)
       .then(userCredentials => {
         const user = userCredentials.user
-        // navigation.navigate('Home')
+        navigation.navigate('Home')
         console.log('register with', user.email)
       })
       .catch(error => alert(error.message))
@@ -42,7 +42,7 @@ export default function Login() {
         const user = userCredentials.user;
 
         setIsLogIn(true)
-        navigation.navigate('Home')
+        // navigation.navigate('Home')
         console.log('logged with', user.email)
       })
       .catch(error => alert(error.message))
