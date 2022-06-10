@@ -39,6 +39,7 @@ export default function Cart() {
   const dispatch = useDispatch();
   return (
     <ScrollView >
+
       <View>
         {getState.length ?
           <>
