@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState, useEffect } from "react";
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, ImageBackground, SafeAreaView } from "react-native";
-import { FlatList } from "react-native-gesture-handler";
+import { FlatList } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { add_item, delete_cart, remove_item } from "../../redux/actions/cartAction";
 import Ionicons from 'react-native-vector-icons/Ionicons'
