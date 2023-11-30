@@ -20,6 +20,7 @@
       "bundleIdentifier": "native-app"
     },
     "android": {
+      "hermes": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
