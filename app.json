@@ -22,6 +22,7 @@
       "bundleIdentifier": "native-app"
     },
     "android": {
+      "kotlinVersion": "1.7.0",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
